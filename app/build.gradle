@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.ifkbhit.debts"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '28.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha02'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0-beta01'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.2-alpha01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.2-alpha01'
+    // recycler
+    implementation 'androidx.recyclerview:recyclerview:1.1.0-alpha02'
+
+    // android annotations
+    annotationProcessor "org.androidannotations:androidannotations:4.6.0"
+    implementation "org.androidannotations:androidannotations-api:4.6.0"
+
+    // annotations
+    implementation 'com.android.support:support-annotations:28.0.0'
+
+    // picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // rounded ImageView
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    // CardView
+    implementation 'com.android.support:cardview-v7:28.0.0'
+}
